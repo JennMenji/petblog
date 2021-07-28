@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS pet_blog_db;
+
+CREATE DATABASE pet_blog_db;
