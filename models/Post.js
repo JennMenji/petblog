@@ -3,32 +3,7 @@ const sequelize = require("../config/connection");
 
 // create or Post model
 class Post extends Model {
-  static upvote(body, models) {
-    return models.Vote.create({
-      user_id: body.user_id,
-      post_id: body.post_id,
-    }).then(() => {
-      // then find the post we just voted on
-      return Post.findOne({
-        where: {
-          id: body.post_id,
-        },
-        attributes: [
-          "id",
-          "post_url",
-          "title",
-          "created_at",
-          // use raw mySQL aggregate function to get a count of how many votes the post has and return it under the name "vote_count"
-          [
-            sequelize.literal(
-              "(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)"
-            ),
-            "vote_count",
-          ],
-        ],
-      });
-    });
-  }
+
 }
 
 // create feilds/columns for Post model
@@ -44,12 +19,10 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    post_url: {
+    content: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        isUrl: true,
-      },
+      
     },
     user_id: {
       type: DataTypes.INTEGER,
