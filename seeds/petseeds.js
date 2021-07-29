@@ -13,5 +13,5 @@ const petdata = [
   },
 ];
 
-const seedPets = () => Post.bulkCreate(petdata);
+const seedPets = () => Pet.bulkCreate(petdata);
 module.exports = seedPets;
