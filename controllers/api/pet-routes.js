@@ -44,15 +44,16 @@ router.post("/", (req, res) => {
     type: req.body.type,
     age: req.body.age,
     user_id: req.body.user_id,
-    dog_image: fs.readFileSync(
-      __basedir + "../../public/uploads" + req.file.filename)
-  })
+  //   dog_image: fs.readFileSync(
+  //     "../../public/uploads" )
+   })
     .then((dbPetData) => res.json(dbPetData)
-    .then(
-    fs.writeFileSync(
-      __basedir + "../../public/uploads" + Pet.name + Pet.type,
-      dbPetData.dog_image
-    )))
+    // .then(
+    // fs.writeFileSync(
+    //   __basedir + "../../public/uploads" + Pet.name + Pet.type,
+    //   dbPetData.dog_image
+    // ))
+    )
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);

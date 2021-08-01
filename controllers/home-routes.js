@@ -4,7 +4,7 @@ const { Post, User, Comment, Pet } = require("../models");
 
 router.get("/", (req, res) => {
   Pet.findAll({
-    attributes: ["id", "name", "age", "user_id"],
+    attributes: ["id", "name", "age", "type", "user_id"],
     include: [
       {
         model: User,
@@ -16,6 +16,8 @@ router.get("/", (req, res) => {
       const pets = dbPostData.map((pet) => pet.get({ plain: true }));
       console.log(req.session);
       // pass a single post object into the homepage template
+
+      console.log(pets)
       res.render("homepage", { pets, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
@@ -26,6 +28,12 @@ router.get("/", (req, res) => {
 
 router.get("/login", (req, res) => {
   res.render("login");
+});
+
+router.get("/newpet", (req, res) => {
+
+
+  res.render("newpet");
 });
 
 module.exports = router;

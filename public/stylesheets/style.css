@@ -2,6 +2,7 @@
   font-family:  'Open Sans', 'Helvetica Neue';
   padding: 0;
   margin: 0;
+  color: black;
 }
 
 html, body
@@ -31,4 +32,8 @@ div .notloggedin {
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
+}
+
+li {
+  color: black;
 }
