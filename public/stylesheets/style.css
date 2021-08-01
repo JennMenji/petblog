@@ -1,19 +1,18 @@
 * {
-  font-family:  'Open Sans', 'Helvetica Neue';
+  font-family: "Open Sans", "Helvetica Neue";
   padding: 0;
   margin: 0;
   color: black;
 }
 
-html, body
-{
-    height: 100%;
-    width: 100%;
+html,
+body {
+  height: 100%;
+  width: 100%;
 }
 
 header {
   background-color: #423c37;
-  
 }
 
 header a {
@@ -22,18 +21,32 @@ header a {
 }
 
 div .notloggedin {
-  
-  background-image: url("../images/Notloggedin.png") ;
-  
-   /* Full height */
-   height: 100%; 
+  background-image: url("../images/Notloggedin.png");
 
-   /* Center and scale the image nicely */
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 li {
   color: black;
+}
+
+.pet-list li {
+  background-color: #645b54;
+  margin: 15px;
+  padding: 20px;
+  list-style-type: none;
+}
+
+.pet-list h3 {
+  font-size: 25px;
+}
+
+.pet-list p {
+  font-size: 20px;
 }
