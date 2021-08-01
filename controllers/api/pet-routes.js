@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const { Post, User, Pet } = require("../../models");
+const fs = require("fs");
+
 
 router.get("/", (req, res) => {
   console.log("======================");
@@ -36,19 +38,27 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
+
   Pet.create({
     name: req.body.name,
     type: req.body.type,
     age: req.body.age,
     user_id: req.body.user_id,
+    dog_image: fs.readFileSync(
+      __basedir + "../../public/uploads" + req.file.filename)
   })
-    .then((dbPetData) => res.json(dbPetData))
+    .then((dbPetData) => res.json(dbPetData)
+    .then(
+    fs.writeFileSync(
+      __basedir + "../../public/uploads" + Pet.name + Pet.type,
+      dbPetData.dog_image
+    )))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
+
 
 router.put("/:id", (req, res) => {
   Pet.update(

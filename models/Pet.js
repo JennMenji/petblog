@@ -23,12 +23,17 @@ Pet.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    dog_image:{
+      type: DataTypes.BLOB ("long"),
+   
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "user",
         key: "id",
       },
+
     },
   },
   {
