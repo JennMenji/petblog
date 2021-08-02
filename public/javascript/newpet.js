@@ -3,8 +3,9 @@ async function newpetFormHandler(event) {
   
     const name = document.querySelector("#pet-name").value.trim();
     const animal = document.querySelector("#animal").value.trim();
+    const breed = document.querySelector("#breed").value.trim();
     const age = document.querySelector("#age").value.trim();
-  
+    
     if (name && animal && age) {
       const response = await fetch("/api/pet", {
         method: "POST",
