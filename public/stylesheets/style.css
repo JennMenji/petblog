@@ -16,8 +16,12 @@ header {
   background-color: #423c37;
   height: 6%;
   display: flex;
-  justify-content: space-between;
   padding: 1%;
+}
+
+header h1 {
+  float: left;
+  margin-left: 1vh;
 }
 
 header a {
@@ -28,9 +32,24 @@ header a {
 }
 
 header img {
-  height: 100px;
-  width: 100px;
-  z-index: 10;
+  border-radius: 0%;
+  height: 6vh;
+  width: 6vh;
+  
+  
+}
+
+nav  {
+  padding-top: 1.5vh;
+
+}
+
+
+div .navigation {
+  width: 99%;
+  display: flex;
+  justify-content: space-between;
+ 
 }
 
 div .notloggedin {
