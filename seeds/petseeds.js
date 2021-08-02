@@ -3,12 +3,12 @@ const { Pet } = require("../models");
 const petdata = [
   {
     name: "Luna",
-    type: "dog",
+    animal: "dog",
     age: 1,
   },
   {
     name: "Larry",
-    type: "dog",
+    animal: "dog",
     age: 5,
   },
 ];
