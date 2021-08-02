@@ -15,9 +15,13 @@ Pet.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    type: {
+    animal: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    breed: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     age: {
       type: DataTypes.INTEGER,

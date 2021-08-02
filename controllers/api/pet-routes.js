@@ -12,7 +12,8 @@ router.get("/", (req, res) => {
     attributes: [
       "id",
       "name",
-      "type",
+      "animal",
+      "breed",
       "age",
       "created_at",
       "user_id",
@@ -41,7 +42,8 @@ router.post("/", (req, res) => {
 
   Pet.create({
     name: req.body.name,
-    type: req.body.type,
+    animal: req.body.animal,
+    breed: req.body.breed,
     age: req.body.age,
     user_id: req.body.user_id,
   //   dog_image: fs.readFileSync(
@@ -63,11 +65,7 @@ router.post("/", (req, res) => {
 
 router.put("/:id", (req, res) => {
   Pet.update(
-    {
-      name: req.body.name,
-      type: req.body.type,
-      age: req.body.age,
-    },
+    req.body,
     {
       where: {
         id: req.params.id,
