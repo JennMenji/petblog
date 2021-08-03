@@ -1,8 +1,10 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Post, User, Comment, Pet } = require("../models");
+const withAuth = require('../utils/auth');
 
-router.get("/", (req, res) => {
+
+router.get("/", withAuth, (req, res) => {
   Pet.findAll({
     attributes: ["id", "name", "age", "animal",
     "breed", "user_id"],
@@ -43,7 +45,7 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-router.get("/newpet", (req, res) => {
+router.get("/newpet",  (req, res) => {
   if (req.session.loggedIn) {
     res.render("newpet");
     return;

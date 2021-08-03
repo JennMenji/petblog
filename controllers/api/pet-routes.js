@@ -2,6 +2,7 @@ const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const { Post, User, Pet } = require("../../models");
 const fs = require("fs");
+const withAuth = require("../../utils/auth");
 
 
 router.get("/", (req, res) => {
@@ -38,7 +39,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
 
   Pet.create({
     name: req.body.name,
