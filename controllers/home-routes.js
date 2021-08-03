@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Post, User, Comment, Pet } = require("../models");
-const withAuth = require('../utils/auth');
 
 
-router.get("/", withAuth, (req, res) => {
+
+router.get("/",  (req, res) => {
   Pet.findAll({
     attributes: ["id", "name", "age", "animal",
     "breed", "user_id"],
