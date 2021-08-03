@@ -99,4 +99,42 @@ router.delete("/:id", withAuth, (req, res) => {
     });
 });
 
+
+
+router.get("/:id", (req, res) => {
+  Pet.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: [
+      "id",
+      "name",
+      "animal",
+      "breed",
+      "age",
+      "dog_image",
+      "created_at",
+      "user_id",
+    ],
+    include: [
+      {
+        model: User,
+        attributes: ["id", "username"],
+      },
+    ],
+  })
+    .then((dbPetData) => {
+      if (!dbPetData) {
+        res.status(404).json({ message: "No pet found with this id " });
+        return;
+      }
+
+      res.json(dbPetData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 module.exports = router;

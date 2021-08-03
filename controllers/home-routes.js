@@ -41,6 +41,7 @@ router.get("/pet/:id", (req, res) => {
       "animal",
       "breed",
       "age",
+      "dog_image",
       "created_at",
       "user_id",
     ],

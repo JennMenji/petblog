@@ -1,4 +1,13 @@
-<section class="pet-profile">
+
+{{#if loggedIn}}
+<div class="singlepet">
+{{>pet-info pet}}
+</div>
+
+
+
+{{/if}}
+{{!-- <section class="pet-profile">
     <div class="pet-image">
       <img src="">
     </div>
@@ -8,4 +17,4 @@
       Type of Animal: {{animal}} </br>
       Breed: {{breed}} </br>
     </p>
-</section>
+</section> --}}
