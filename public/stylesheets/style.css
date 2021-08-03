@@ -62,6 +62,8 @@ div .notloggedin {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  
 }
 
 li {
@@ -96,3 +98,137 @@ div .pet-image {
   height: 150px;
 }
 
+.description {
+  font-size: large;
+position: relative;
+top: 13vh;
+  width: 40vh;
+  left: 10vh
+}
+
+.circular-sb {
+  width: 50vh;
+  border: 5px solid black;
+  padding: 80px 0px;
+  margin: 30px auto;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  left:40vh;
+  bottom: 13vh;
+  
+}
+
+.circle3 {
+  border: 5px solid black;
+  position: absolute;
+  width: 25px;
+  padding: 20px;
+  border-radius: 50%;
+  left: -10px;
+  bottom: 10px;
+  background-color: white;
+}
+
+.circle3:before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  padding: 20px;
+  border-radius: 50%;
+  right: 0px;
+  bottom: 0px;
+  
+}
+
+.circle4 {
+  border: 5px solid black;
+  position: absolute;
+  width: 5px;
+  padding: 10px 15px;
+  border-radius: 50%;
+  left: -60px;
+  bottom: 5px;
+}
+
+
+textarea, input {
+  padding: .5%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  min-width: 40%;
+  min-height: 100px;
+}
+
+form > div {
+  margin-bottom: 2%;
+}
+
+form label {
+  display: block;
+}
+
+form {
+  
+  padding-top:  10vh;
+  text-align: center;
+}
+
+.noaccount {
+  text-align: center;
+}
+
+button {
+  padding: 8px 12px;
+  outline: none;
+  border: 0;
+  color: #fff;
+  border-radius: 4px;
+  background: #8c7569;
+  font-family: "Nunito", sans-serif;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+  button:hover {
+    background: #423c37;
+  }
+
+
+
+form div label {
+
+  text-transform: uppercase;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  color: #8c7569;
+  transition: 0.3s;
+}
+
+form div{
+  
+  flex-direction: column;
+  padding: 10px 10px 8px;
+ 
+  border-radius: 4px;
+  margin-bottom: 20px;
+  transition: 0.3s;}
+
+  form div input {
+    outline: 0;
+    border: 0;
+    padding: 4px 0 0;
+    font-size: 14px;
+    font-family: "Nunito", sans-serif;
+
+    background-color: rgb(232, 240, 254);
+  }
+    input::placeholder {
+      color: #ccc;
+      opacity: 1;
+    }
+  
