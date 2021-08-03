@@ -10,28 +10,25 @@
   <body>
     <div class="wrapper">
       <header>
-        <img src="puppypaws.png" alt="puppy paw">
+        <img src="puppypaws.png" alt="puppy paw" />
 
         <div class="navigation">
-        <h1>
-          <a href="/">Lucky Pets United </a>
-          
-         
-        </h1>
-         
+          <h1>
+            <a href="/">Lucky Pets United </a>
 
-        <nav>
+          </h1>
 
-          
-          {{#if loggedIn}}
-          <a href="/newpet">Add Pet</a>
-           <button id="logout" class="btn-no-style">logout</button>
-           {{else}}
-          <a href="/login">login</a>
-           {{/if}}
-        </nav>
+          <nav>
 
-</div>
+            {{#if loggedIn}}
+              <a href="/newpet">Add Pet</a>
+              <button id="logout" class="btn-no-style">logout</button>
+            {{else}}
+              <a href="/login">login</a>
+            {{/if}}
+          </nav>
+
+        </div>
       </header>
       <main>
         {{{body}}}
@@ -41,10 +38,10 @@
       </footer>
     </div>
 
- {{#if loggedIn}}
-  <script src="/javascript/logout.js"></script>
-  {{/if}}
-  
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
+
   </body>
 
 </html>

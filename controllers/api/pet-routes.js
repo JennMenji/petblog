@@ -18,12 +18,6 @@ router.get("/", (req, res) => {
       "age",
       "created_at",
       "user_id",
-      // [
-      //   sequelize.literal(
-      //     "(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)"
-      //   ),
-      //   "vote_count",
-      // ],
     ],
     include: [
       {
@@ -40,7 +34,7 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", withAuth, upload.single("file"), (req, res) => {
-  console.log(req.session)
+  console.log(req.session);
   Pet.create({
     name: req.body.name,
     animal: req.body.animal,
@@ -48,37 +42,31 @@ router.post("/", withAuth, upload.single("file"), (req, res) => {
     age: req.body.age,
     user_id: req.session.user_id,
 
-    dog_image: fs.readFileSync(__dirname +
-      "/public/uploads/" + req.body.dog_image)
-
+    dog_image: fs.readFileSync(
+      __dirname + "/public/uploads/" + req.body.dog_image
+    ),
   })
     .then((dbPetData) => {
-
       fs.writeFileSync(
-        __dirname + "/public/uploads/" + req.file.originalname + dbPetData.dog_image,
-
-      )
-      res.json(dbPetData)
-    }
-
-
-    )
+        __dirname +
+          "/public/uploads/" +
+          req.file.originalname +
+          dbPetData.dog_image
+      );
+      res.json(dbPetData);
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-
 router.put("/:id", withAuth, (req, res) => {
-  Pet.update(
-    req.body,
-    {
-      where: {
-        id: req.params.id,
-      },
-    }
-  )
+  Pet.update(req.body, {
+    where: {
+      id: req.params.id,
+    },
+  })
     .then((dbPetData) => {
       if (!dbPetData) {
         res.status(404).json({ message: "No pet found with this id found" });

@@ -10,5 +10,4 @@ router.use("/posts", postRoutes);
 router.use("/comments", commentRoutes);
 router.use("/pet", petRoutes);
 
-
 module.exports = router;
