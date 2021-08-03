@@ -46,7 +46,7 @@ console.log(req.session)
     animal: req.body.animal,
     breed: req.body.breed,
     age: req.body.age,
-    user_id: req.body.user_id,
+    user_id: req.session.user_id,
   //   dog_image: fs.readFileSync(
   //     "../../public/uploads" )
    })
