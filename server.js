@@ -4,28 +4,28 @@ const sequelize = require("./config/connection");
 const path = require("path");
 const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+
+
 const multer = require("multer");
 
 // Set up images
-const DIR = "./public/uploads";
+// const DIR = "./public/uploads";
 
-let storage = multer.diskStorage({
-  destination: function (req, file, callback) {
-    callback(null, DIR);
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + "-" + path.extname(file.originalname));
-  },
-});
+// let storage = multer.diskStorage({
+//   destination: function (req, file, callback) {
+//     callback(null, DIR);
+//   },
+//   filename: function (req, file, cb) {
+//     cb(null, file.fieldname + "-" + path.extname(file.originalname));
+//   },
+// });
 
-let upload = multer({ storage: storage });
+// let upload = multer({ storage: storage });
 
-module.exports = upload;
+// module.exports = upload;
 
 // Set up handlebars
 const exphbs = require("express-handlebars");
-const { callbackify } = require("util");
-const { dirname } = require("path");
 const hbs = exphbs.create({});
 
 const app = express();

@@ -45,16 +45,6 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-router.get("/newpet",  (req, res) => {
-  if (req.session.loggedIn) {
-    res.render("newpet");
-    return;
-  }
 
-
-  else {
-    res.redirect('/');
-  }
-});
 
 module.exports = router;

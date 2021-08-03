@@ -40,7 +40,7 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", withAuth, (req, res) => {
-
+console.log(req.session)
   Pet.create({
     name: req.body.name,
     animal: req.body.animal,
@@ -64,7 +64,7 @@ router.post("/", withAuth, (req, res) => {
 });
 
 
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
   Pet.update(
     req.body,
     {
@@ -86,7 +86,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   Pet.destroy({
     where: {
       id: req.params.id,
