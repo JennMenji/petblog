@@ -5,8 +5,6 @@ const path = require("path");
 const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
-
-
 // Set up handlebars
 const exphbs = require("express-handlebars");
 const hbs = exphbs.create({});
@@ -32,20 +30,12 @@ app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
-app.use(express.static('public/images'))
-
-
-
-
-
-
-
-
+app.use(express.static("public/images"));
 
 // turn on routes
 app.use(routes);
 
 // turn on connection to db and server
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log("Now listening."));
 });
