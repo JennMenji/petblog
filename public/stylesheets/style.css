@@ -119,6 +119,7 @@ top: 13vh;
 }
 
 .circular-sb {
+  background-color: white;
   width: 50vh;
   border: 5px solid black;
   padding: 80px 0px;
@@ -154,6 +155,7 @@ top: 13vh;
 }
 
 .circle4 {
+  background-color: white;
   border: 5px solid black;
   position: absolute;
   width: 5px;
@@ -243,4 +245,67 @@ form div{
       color: #ccc;
       opacity: 1;
     }
+
+@media only screen and (max-width: 2560px) {
+  .circular-sb {
+    font-size: 1vw;
+    border: 7px solid black;
+    position: relative;
+    bottom: 6vw;
+  }
+
+  .navigation nav a, .description {
+    font-size: 3vh;
+  }
+
+}
+
+@media only screen and {
+  
+}
+
+@media only screen and (max-width: 1440px) {
+  .circular-sb {
+    font-size: 2vw;
+    position: relative;
+    left: 25vw;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .circular-sb {
+    display: contents;
+  }
+
+  .circle3{
+    display: none;
+  }
+
+  .circular-sb h2 {
+    position: relative;
+    top: 20vw;
+  }
+
+  .description {
+    width: 76vw;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+  .notloggedin p {
+    position: relative;
+    top: 50px;
+  }
+
+  .circular-sb h2 {
+    font-size: 5vw;
+  }
+}
+
+@media only screen and (max-width: 425) {
+  .navigation h1 a {
+    font-size: 1px;
+  }
+}
   
