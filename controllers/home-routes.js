@@ -7,7 +7,7 @@ const { Post, User, Comment, Pet } = require("../models");
 router.get("/",  (req, res) => {
   Pet.findAll({
     attributes: ["id", "name", "age", "animal",
-    "breed", "user_id"],
+    "breed", "dog_image", "user_id"],
     include: [
       {
         model: User,

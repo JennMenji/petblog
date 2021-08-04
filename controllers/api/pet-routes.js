@@ -34,7 +34,13 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", withAuth, upload.single("file"), (req, res) => {
-  console.log(req.session);
+  
+  console.log(req.file);
+
+
+
+      
+  
   Pet.create({
     name: req.body.name,
     animal: req.body.animal,
@@ -42,17 +48,10 @@ router.post("/", withAuth, upload.single("file"), (req, res) => {
     age: req.body.age,
     user_id: req.session.user_id,
 
-    dog_image: fs.readFileSync(
-      __dirname + "/public/uploads/" + req.body.dog_image
-    ),
+    dog_image: req.file.filename
   })
     .then((dbPetData) => {
-      fs.writeFileSync(
-        __dirname +
-          "/public/uploads/" +
-          req.file.originalname +
-          dbPetData.dog_image
-      );
+    
       res.json(dbPetData);
     })
     .catch((err) => {
