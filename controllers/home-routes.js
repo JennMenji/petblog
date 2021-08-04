@@ -2,12 +2,17 @@ const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Post, User, Comment, Pet } = require("../models");
 
-
-
-router.get("/",  (req, res) => {
+router.get("/", (req, res) => {
   Pet.findAll({
-    attributes: ["id", "name", "age", "animal",
-    "breed", "dog_image", "user_id"],
+    attributes: [
+      "id",
+      "name",
+      "age",
+      "animal",
+      "breed",
+      "dog_image",
+      "user_id",
+    ],
     include: [
       {
         model: User,
@@ -20,7 +25,7 @@ router.get("/",  (req, res) => {
       console.log(req.session);
       // pass a single post object into the homepage template
 
-      console.log(pets)
+      console.log(pets);
       res.render("homepage", { pets, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
@@ -28,7 +33,6 @@ router.get("/",  (req, res) => {
       res.status(500).json(err);
     });
 });
-
 
 router.get("/pet/:id", (req, res) => {
   Pet.findOne({
@@ -46,6 +50,14 @@ router.get("/pet/:id", (req, res) => {
       "user_id",
     ],
     include: [
+      {
+        model: Comment,
+        attributes: ["id", "comment_text", "user_id", "created_at"],
+        include: {
+          model: User,
+          attributes: ["username"],
+        },
+      },
       {
         model: User,
         attributes: ["id", "username"],
@@ -70,7 +82,7 @@ router.get("/pet/:id", (req, res) => {
 
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
   res.render("login");
@@ -78,12 +90,10 @@ router.get("/login", (req, res) => {
 
 router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
   res.render("signup");
 });
-
-
 
 module.exports = router;

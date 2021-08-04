@@ -5,7 +5,6 @@ class Comment extends Model {}
 
 Comment.init(
   {
-    // columns will go here
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -15,7 +14,7 @@ Comment.init(
       type: DataTypes.TEXT,
       allowNull: false,
       validate: {
-        len: [1],
+        len: [3],
       },
     },
     user_id: {
@@ -26,11 +25,11 @@ Comment.init(
         key: "id",
       },
     },
-    post_id: {
+    pet_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "post",
+        model: "pet",
         key: "id",
       },
     },
