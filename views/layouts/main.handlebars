@@ -15,33 +15,31 @@
         <div class="navigation">
           <h1>
             <a href="/">Lucky Pets United </a>
-
           </h1>
 
           <nav>
-
             {{#if loggedIn}}
               <a href="/newpet">Add Pet</a>
-              <button id="logout" class="btn-no-style">logout</button>
+              <button id="logout" class="btn-no-style">Logout</button>
             {{else}}
-              <a href="/login">login</a>
+              <a href="/login">Login</a>
+              <a href="/signup">Sign Up</a>
             {{/if}}
           </nav>
-
         </div>
       </header>
+
       <main>
         {{{body}}}
       </main>
       <footer>
-        Thanks for visiting!
+        {{! Thanks for visiting! }}
       </footer>
     </div>
 
     {{#if loggedIn}}
       <script src="/javascript/logout.js"></script>
     {{/if}}
-
   </body>
 
 </html>

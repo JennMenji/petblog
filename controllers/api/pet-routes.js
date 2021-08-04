@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
-const { Post, User, Pet } = require("../../models");
+const { Post, User, Comment, Pet } = require("../../models");
 const fs = require("fs");
 const withAuth = require("../../utils/auth");
 const upload = require("../../middleware/upload");
@@ -21,6 +21,14 @@ router.get("/", (req, res) => {
     ],
     include: [
       {
+        model: Comment,
+        attributes: ["id", "comment_text", "user_id", "created_at"],
+        include: {
+          model: User,
+          attributes: ["username"],
+        },
+      },
+      {
         model: User,
         attributes: ["id", "username"],
       },
@@ -34,13 +42,8 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", withAuth, upload.single("file"), (req, res) => {
-  
   console.log(req.file);
 
-
-
-      
-  
   Pet.create({
     name: req.body.name,
     animal: req.body.animal,

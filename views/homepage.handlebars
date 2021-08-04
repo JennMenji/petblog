@@ -1,35 +1,39 @@
- {{#if loggedIn}}
+{{#if loggedIn}}
 
-<ol class="pet-list">
-  {{#each pets as |pet|}}
-  <li>
-    {{> pet-info pet}}
-  </li>
-  {{/each}}
-</ol>
+<section class="loggedin">
+  <div class="all-pets-header">
+    <h2>Find a Lucky Pet!</h2>
+    <p>Meet the awesome pets in the Lucky Pet Family! Browse the profiles and find a new furry (or not so furry) friend or two!</p>
+    <br>
+    <p>See a Pet your companion might want to be friends with? Well click on the photo, view more info, and leave a like or comment! You can even contact the owner to set up a play date!</p>
+  </div>
 
-   {{else}}
+  <div class="all-pets">
+    <ol class="pet-list">
+      {{#each pets as |pet|}}
+      <li>
+      {{> pet-info pet}}
+      </li>
+      {{/each}}
+    </ol>
+  </div>
+</section>
+
+{{else}}
 
 <div class="notloggedin">
-
-<p class="description"> <strong>WELCOME TO LUCKY PETS UNITED 🐾</strong>
-   </br> Lucky pets United is a social media 
-app for you and your pets. </br> Do you ever wonder if your pet is lonely?
-The solution is here!  </br>Make a profile for your pet and discover other pet 
-owners in the area </p> 
-
-
-<div class="circular-sb">
-<h2>
-  <a href="/signup">Start your adventure Today</a>
-</h2>
-<div class="circle3"></div>
-<div class="circle4"></div>
+  <p class="description"> <strong>WELCOME TO LUCKY PETS UNITED 🐾</strong>
+    </br> Lucky pets United is a social media app for you and your pets. 
+    </br> Do you ever wonder if your pet is lonely? The solution is here!
+    </br> Make a profile for your pet and discover other pet owners in the area 
+  </p> 
+  <div class="circular-sb">
+    <h2>
+      <a href="/signup">Start your adventure Today</a>
+    </h2>
+    <div class="circle3"></div>
+    <div class="circle4"></div>
+  </div>
 </div>
 
-
-</div>
-
-
-
-    {{/if}}
+{{/if}}

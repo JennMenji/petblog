@@ -10,7 +10,6 @@ class User extends Model {
   }
 }
 
-// define table columns and configuration
 User.init(
   {
     id: {
@@ -31,12 +30,11 @@ User.init(
         isEmail: true,
       },
     },
-    // define a password column
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        // this means the password must be at least four characters long
+        // password length must be at least four characters long
         len: [4],
       },
     },
