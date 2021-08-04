@@ -1,3 +1,16 @@
-# petblog
+# Lucky Pets United
 
-My idea: give feedback please https://www.canva.com/design/DAElm84ksDA/share/preview?token=CbOsSa4WMJWoEJv1y2PW-g&role=EDITOR&utm_content=DAElm84ksDA&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+## Description
+Lucky Pets United is a social media app designed for you and your pet. 
+
+## screenshot
+
+![screenshot](./public\images\loggedOutScreen.png)
+![screenshot](./public\images\loggedInScreen.png)
+## Link
+* https://github.com/JennMenji/petblog
+* https://dashboard.heroku.com/apps/luckypetsunited
+
+## Contribution
+* Fani Del Toro
+* Jenn Menjivar
