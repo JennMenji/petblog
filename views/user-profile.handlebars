@@ -4,15 +4,14 @@
   <p> Username: {{user.username}}  </p> 
 <p>    Email: {{user.email}}</p> 
 
+{{#each user.pets}}
+<li> {{> user-info}}</li>
+{{/each}}
+ {{!-- {{#each pets as |pet| }}
+      
+{{> pet-info}}
 
-
-
-
-
-
-
-
- {{user.[1].pets.[1].name}}
+    {{/each}} --}}
 
   
 </div>
