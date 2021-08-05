@@ -20,7 +20,7 @@ header {
   background-color: #423c37;
   height: 6%;
   display: flex;
-  padding: 1%;
+ padding: 1%;
 }
 
 header h1 {
@@ -104,6 +104,9 @@ li {
   padding: 5px;
   display: flex;
   justify-content: center;
+}
+.singlepet h3{
+  font-size: 27px;
 }
 
 img {
@@ -193,7 +196,7 @@ form label {
 }
 
 form {
-  padding-top: 5vh;
+  padding-top: 2vh;
   text-align: center;
 }
 
@@ -266,11 +269,11 @@ input::placeholder {
 }
 
 .comment-section h4 {
-  position: relative;
-  left: 46%;
+  text-align: center;
   top: 5vw;
   text-decoration: underline;
   font-size: 2vw;
+  
 }
 
 @media only screen and (max-width: 2560px) {
@@ -382,11 +385,10 @@ input::placeholder {
     margin: 15px;
     padding: 5px;
     display: flex;
-    justify-content: right;
   }
 
   .comment-section h4 {
-    font-size: x-large;
+    font-size: large;
   }
 
   .comments-background {
