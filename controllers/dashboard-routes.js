@@ -35,43 +35,7 @@ router.get("/", withAuth, (req, res) => {
   });
 
 
-// To view a Pet Profile once you click on the Image
-// router.get("/", (req, res) => {
-//     Pet.findAll({
-//       where: {
-//         user_id: req.session.user_id,
-//       },
-//       attributes: [
-//         "id",
-//         "name",
-//         "animal",
-//         "breed",
-//         "age",
-//         "dog_image",
-//         "created_at",
-//         "user_id",
-//       ],
-//       include: [
-      
-//       ],
-//     })
-//       .then((dbPetData) => {
-//         if (!dbPetData) {
-//           res.status(404).json({ message: "No pet found with this id " });
-//           return;
-//         }
   
-//         const pets = dbPostData.map((pet) => pet.get({ plain: true }));
-  
-//         res.render("user-profile", { pet, loggedIn: req.session.loggedIn });
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//         res.status(500).json(err);
-//       });
-//   });
-
-
 
 
 
