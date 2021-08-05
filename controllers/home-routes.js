@@ -82,34 +82,7 @@ router.get("/pet/:id", (req, res) => {
 });
 
 // To view the User Profile
-router.get("/:id", (req, res) => {
-  User.findOne({
-    attributes: { exclude: ["password"] },
-    where: {
-      id: req.params.id,
-    },
-    include: [
-      {
-        model: Pet,
-        attributes: ["id", "name", "animal", "breed", "age"],
-      },
-    ],
-  })
-    .then((dbUserData) => {
-      if (!dbUserData) {
-        res.status(404).json({ message: "No user found with this id " });
-        return;
-      }
 
-      const user = dbUserData.get({ plain: true });
-
-      res.render("user-profile", { user, loggedIn: req.session.loggedIn });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
 
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
