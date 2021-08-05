@@ -34,6 +34,7 @@ router.get("/", (req, res) => {
     });
 });
 
+// To view a Pet Profile once you click on the Image
 router.get("/pet/:id", (req, res) => {
   Pet.findOne({
     where: {
@@ -79,6 +80,9 @@ router.get("/pet/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
+
+// To view the User Profile
+
 
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {

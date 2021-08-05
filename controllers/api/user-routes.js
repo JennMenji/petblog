@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const { User, Post, Comment, Pet } = require("../../models");
-const withAuth = require('../../utils/auth');
-
+const withAuth = require("../../utils/auth");
 
 // GET /api/users
 router.get("/", (req, res) => {
@@ -26,7 +25,7 @@ router.get("/:id", (req, res) => {
     include: [
       {
         model: Pet,
-        attributes: ["id", "name", "animal","breed", "age"],
+        attributes: ["id", "name", "animal", "breed", "age"],
       },
     ],
   })
@@ -51,15 +50,15 @@ router.post("/", (req, res) => {
     email: req.body.email,
     password: req.body.password,
   })
-  .then(dbUserData => {
-    req.session.save(() => {
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
-      req.session.loggedIn = true;
-  
-      res.json(dbUserData);
-    });
-  })
+    .then((dbUserData) => {
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.loggedIn = true;
+
+        res.json(dbUserData);
+      });
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -98,7 +97,7 @@ router.post("/login", (req, res) => {
   });
 });
 
-router.post('/logout', withAuth, (req, res) => {
+router.post("/logout", withAuth, (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -106,8 +105,7 @@ router.post('/logout', withAuth, (req, res) => {
   } else {
     res.status(404).end();
   }
-})
-
+});
 
 // PUT /api/users/1
 router.put("/:id", withAuth, (req, res) => {
@@ -132,7 +130,7 @@ router.put("/:id", withAuth, (req, res) => {
 });
 
 // DELETE /api/users/1
-router.delete("/:id",withAuth, (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   User.destroy({
     where: {
       id: req.params.id,
@@ -150,7 +148,5 @@ router.delete("/:id",withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
-
-
 
 module.exports = router;

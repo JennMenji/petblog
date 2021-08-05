@@ -1,0 +1,19 @@
+<p>User Profile </p>
+
+<div class="userprofile">
+  <p> Username: {{user.username}}  </p> 
+<p>    Email: {{user.email}}</p> 
+
+{{#each user.pets}}
+<li> {{> user-info}}</li>
+{{/each}}
+ {{!-- {{#each pets as |pet| }}
+      
+{{> pet-info}}
+
+    {{/each}} --}}
+
+  
+</div>
+
+<script src="/javascript/user-profile.js"></script>
