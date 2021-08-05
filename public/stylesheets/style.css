@@ -31,7 +31,7 @@ header h1 {
 
 header a {
   width: 100px;
- 
+  padding: 1vw;
   color: white;
   text-decoration: none;
 }
@@ -251,6 +251,27 @@ form div{
       opacity: 1;
     }
 
+    
+.comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comments-background {
+  background-color: white;
+  border: 1px solid #ccc;
+  margin: 0vh 56vh 0vh 56vh;
+}
+
+.comment-section h4 {
+  position: relative;
+  left: 46%;
+  top: 5vw;
+  text-decoration: underline;
+  font-size: 2vw;
+}
+
 @media only screen and (max-width: 2560px) {
   .circular-sb {
     font-size: 1vw;
@@ -290,26 +311,34 @@ form div{
     width: 76vw;
   }
 
+  .comments-background {
+    margin: 0vh 42vh 0vh 42vh;
+  }
 }
 
 @media only screen and (max-width: 768px) {
   .notloggedin p {
     position: relative;
     top: 50px;
+    font-size: 5vw;
   }
 
   .circular-sb h2 {
     font-size: 5vw;
   }
+
+  .comments-background {
+    margin: 0vh 32vh 0vh 32vh;
+  }
 }
 
 @media only screen and (max-width: 425px) {
   .navigation h1 a {
-    font-size: 8vw;
+    font-size: 5vw;
   }
 
   .navigation nav a {
-    font-size: 7vw;
+    font-size: 5vw;
   }
 
   .description {
@@ -320,10 +349,34 @@ form div{
   .pet-list {
     justify-content: center;
   }
+
+  .singlepet {
+    display: flex;
+    justify-content: center;
+  }
+
+  .comment-section h4 {
+    font-size: x-large;
+  }
+
+  .comments-background {
+    margin: 0vh 18vh 0vh 18vh;
+  }
 }
   
+@media only screen and (max-width: 375px) {
+  .pet-image img {
+    width: 125px;
+    height: 125px;
+  }  
+}
+
 @media only screen and (max-width: 320px) {
   .navigation h1 a {
-    font-size: 8vw;
+    font-size: 6vw;
   }  
+
+  .comments-background {
+    margin: 0vh 12vh 0vh 12vh;
+  }
 }

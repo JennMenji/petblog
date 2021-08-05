@@ -14,3 +14,7 @@ Lucky Pets United is a social media app designed for you and your pet.
 ## Contribution
 * Fani Del Toro
 * Jenn Menjivar
+* Ben Stella
+
+## License
+[MIT License](LICENSE)
