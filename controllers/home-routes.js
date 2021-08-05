@@ -34,6 +34,7 @@ router.get("/", (req, res) => {
     });
 });
 
+// To view a Pet Profile once you click on the Image
 router.get("/pet/:id", (req, res) => {
   Pet.findOne({
     where: {
@@ -73,6 +74,36 @@ router.get("/pet/:id", (req, res) => {
       const pet = dbPetData.get({ plain: true });
 
       res.render("single-pet", { pet, loggedIn: req.session.loggedIn });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// To view the User Profile
+router.get("/:id", (req, res) => {
+  User.findOne({
+    attributes: { exclude: ["password"] },
+    where: {
+      id: req.params.id,
+    },
+    include: [
+      {
+        model: Pet,
+        attributes: ["id", "name", "animal", "breed", "age"],
+      },
+    ],
+  })
+    .then((dbUserData) => {
+      if (!dbUserData) {
+        res.status(404).json({ message: "No user found with this id " });
+        return;
+      }
+
+      const user = dbUserData.get({ plain: true });
+
+      res.render("user-profile", { user, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
