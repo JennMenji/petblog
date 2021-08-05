@@ -22,13 +22,14 @@
         <section class="comment">
           <div class="meta">
             {{!-- You can delete the part that says "User:" & "Comment:" I just added temporarily so you can see read all the comments --}}
-            User: {{user.username}}
+            {{user.username}}:
             {{!-- on
             {{created_at}} --}}
           </div>
           <div class="text">
-            Comment: {{comment_text}}
+            {{comment_text}}
           </div>
+          <br>
         </section>
       {{/each}}
     </div>

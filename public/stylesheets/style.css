@@ -12,12 +12,11 @@ body {
   background-image: url("../images/backroundpets.png");
   height: 100%;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
 }
 
 header {
-  
   background-color: #423c37;
   height: 6%;
   display: flex;
@@ -33,6 +32,7 @@ header a {
   width: 100px;
   padding: 1vw;
   color: white;
+  /* font-size: 16px; */
   text-decoration: none;
 }
 
@@ -40,8 +40,6 @@ header img {
   border-radius: 0%;
   height: 6vh;
   width: 6vh;
-  
-  
 }
 
 header button {
@@ -51,17 +49,14 @@ header button {
   background-color: #423c37;
 }
 
-nav  {
+nav {
   padding-top: 1.5vh;
-
 }
-
 
 div .navigation {
   width: 99%;
   display: flex;
   justify-content: space-between;
- 
 }
 
 div .notloggedin {
@@ -74,8 +69,10 @@ div .notloggedin {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
 
-  
+.loggedin {
+  padding: 20px;
 }
 
 li {
@@ -102,12 +99,19 @@ li {
   font-size: 20px;
 }
 
+.singlepet {
+  margin: 15px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+}
+
 img {
   border-radius: 50%;
   width: 150px; /* width of container */
   height: 150px; /* height of container */
   object-fit: cover;
-  object-position: 20% 10%; /* try 20px 10px */ 
+  object-position: 20% 10%; /* try 20px 10px */
 }
 
 div .pet-image {
@@ -117,10 +121,10 @@ div .pet-image {
 
 .description {
   font-size: large;
-position: relative;
-top: 13vh;
+  position: relative;
+  top: 13vh;
   width: 40vh;
-  left: 10vh
+  left: 10vh;
 }
 
 .circular-sb {
@@ -132,9 +136,8 @@ top: 13vh;
   border-radius: 50%;
   text-align: center;
   position: relative;
-  left:40vh;
+  left: 40vh;
   bottom: 13vh;
-  
 }
 
 .circle3 {
@@ -156,7 +159,6 @@ top: 13vh;
   border-radius: 50%;
   right: 0px;
   bottom: 0px;
-  
 }
 
 .circle4 {
@@ -170,9 +172,9 @@ top: 13vh;
   bottom: 5px;
 }
 
-
-textarea, input {
-  padding: .5%;
+textarea,
+input {
+  padding: 0.5%;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
@@ -183,7 +185,7 @@ textarea {
 }
 
 form > div {
-  margin-bottom: 2%;
+  margin-bottom: 15px;
 }
 
 form label {
@@ -191,8 +193,7 @@ form label {
 }
 
 form {
-  
-  padding-top:  10vh;
+  padding-top: 5vh;
   text-align: center;
 }
 
@@ -212,14 +213,11 @@ button {
   cursor: pointer;
 }
 
-  button:hover {
-    background: #423c37;
-  }
-
-
+button:hover {
+  background: #423c37;
+}
 
 form div label {
-
   text-transform: uppercase;
   font-family: "Nunito", sans-serif;
   font-weight: 600;
@@ -228,34 +226,37 @@ form div label {
   transition: 0.3s;
 }
 
-form div{
-  
+form div {
   flex-direction: column;
   padding: 10px 10px 8px;
- 
+
   border-radius: 4px;
   margin-bottom: 20px;
-  transition: 0.3s;}
+  transition: 0.3s;
+}
 
-  form div input {
-    outline: 0;
-    border: 0;
-    padding: 4px 0 0;
-    font-size: 14px;
-    font-family: "Nunito", sans-serif;
+form div input {
+  outline: 0;
+  border: 0;
+  padding: 4px 0 0;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
 
-    background-color: rgb(232, 240, 254);
-  }
-    input::placeholder {
-      color: #ccc;
-      opacity: 1;
-    }
+  background-color: rgb(232, 240, 254);
+}
+input::placeholder {
+  color: #ccc;
+  opacity: 1;
+}
 
-    
 .comments {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: right;
+}
+
+.comments .meta {
+  font-weight: bold;
 }
 
 .comments-background {
@@ -280,8 +281,9 @@ form div{
     bottom: 6vw;
   }
 
-  .navigation nav a, .description {
-    font-size: 3vh;
+  .navigation nav a,
+  .description {
+    font-size: 2vh;
   }
 }
 
@@ -291,6 +293,15 @@ form div{
     position: relative;
     left: 25vw;
   }
+
+  .navigation nav a {
+    font-size: 2vw;
+    padding: 0 8px;
+  }
+  .btn-no-style {
+    font-size: 2vw;
+    padding: 0%;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -298,7 +309,7 @@ form div{
     display: contents;
   }
 
-  .circle3{
+  .circle3 {
     display: none;
   }
 
@@ -322,6 +333,14 @@ form div{
     top: 50px;
     font-size: 5vw;
   }
+  .navigation nav a {
+    font-size: 3vw;
+    padding: 0;
+  }
+  .btn-no-style {
+    font-size: 3vw;
+    padding: 0 8px;
+  }
 
   .circular-sb h2 {
     font-size: 5vw;
@@ -329,6 +348,10 @@ form div{
 
   .comments-background {
     margin: 0vh 32vh 0vh 32vh;
+  }
+
+  .loggedin {
+    padding: 40px;
   }
 }
 
@@ -338,7 +361,12 @@ form div{
   }
 
   .navigation nav a {
-    font-size: 5vw;
+    font-size: 4vw;
+  }
+
+  .btn-no-style {
+    font-size: 4vw;
+    padding: 0 8px;
   }
 
   .description {
@@ -351,8 +379,10 @@ form div{
   }
 
   .singlepet {
+    margin: 15px;
+    padding: 5px;
     display: flex;
-    justify-content: center;
+    justify-content: right;
   }
 
   .comment-section h4 {
@@ -363,20 +393,29 @@ form div{
     margin: 0vh 18vh 0vh 18vh;
   }
 }
-  
+
 @media only screen and (max-width: 375px) {
   .pet-image img {
     width: 125px;
     height: 125px;
-  }  
+  }
 }
 
 @media only screen and (max-width: 320px) {
   .navigation h1 a {
     font-size: 6vw;
-  }  
+  }
 
   .comments-background {
     margin: 0vh 12vh 0vh 12vh;
+  }
+
+  h2 {
+    text-align: center;
+    padding: 5px;
+  }
+
+  .btn-no-style {
+    padding: 0 2px;
   }
 }
