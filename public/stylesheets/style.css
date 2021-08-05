@@ -419,3 +419,49 @@ input::placeholder {
     padding: 0 2px;
   }
 }
+
+/* user profile */
+
+p.userprofiletitle {
+  margin-top: 2vh;
+  width: 100%;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  font-size: 3vh;
+}
+
+div .userprofile p {
+
+  margin: 1vh;
+  font-size: 2.5vh;
+
+}
+
+li {
+  list-style: none;
+}
+
+.userpet {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.userpet > div{
+  margin: 6px;
+
+}
+.userpetimage {
+
+  height: 100px;
+  margin: 2vh;
+  margin-right: 10vh;
+  
+}
+
+.userpetext {
+  
+  height: 100px;
+  margin: 4vh;
+margin-left:5vh ;
+}
